@@ -24,7 +24,7 @@ F 3 "https://www.mouser.de/datasheet/2/682/Sensirion_10272020_Datasheet_SHT4x-19
 	1    12500 7900
 	1    0    0    -1  
 $EndComp
-Text Notes 4700 6550 0    50   ~ 0
+Text Notes 4800 6500 0    50   ~ 0
 * Energy Calculation *\n\nThe LiIon SuperCap has the following ratings: 30F 3.8V (min 2.2V)\n=> 30F * ((3.78V)^2 - (2.3V)^2) = 270J\n\nWe can assume roughly 1.5J (conservative) consumption per measurement,\nwhich means for one measurement every 10-15’: \n=> 24h/10’ = 144 * 1.5J = 216J or 24h/15’ = 96 * 1.5J = 144J\n\nThis calculation does not take the self-discharge of the capacitor into\naccount.\n\nUsing the data from the solar panel’s datasheet, we assume 10-20 W/m²\nof light power density indoors. Assuming an efficiency of 25%:\n993mm² * 10W/m² * 0.25 ≈ 2.5mW (in the summer we can assume higher)\n\nThis means we get around 90J from 10h of light, so the measurement \nfrequency has to be reduced when there’s low light.
 Wire Wire Line
 	2850 6000 2700 6000
@@ -983,8 +983,6 @@ Wire Wire Line
 	2700 6300 2850 6300
 Wire Wire Line
 	2700 6000 2700 6300
-Text Notes 6450 8650 0    50   ~ 0
-The datasheet says:\n‘In custom mode, Vhv is\nadjustable between 2.2V\nand Vbatt-0.3V’\nBut in non-custom mode,\n1.8V can be selected.
 $Comp
 L SparkFun-PowerSymbols:1.8V #SUPPLY011
 U 1 1 60B0F585
@@ -1014,8 +1012,6 @@ Wire Wire Line
 	5600 8750 5750 8750
 Wire Wire Line
 	5750 8750 5750 8700
-Text Notes 5200 9000 0    50   ~ 0
-In case Vhv can’t\nbe set to 1.8V
 $Comp
 L power:GND #PWR040
 U 1 1 60B5EC43
@@ -2112,12 +2108,6 @@ Wire Wire Line
 Connection ~ 6100 10250
 Text Notes 6600 7850 0    50   ~ 0
 Tecate TPLC-3R8/30MR8X25
-Wire Notes Line
-	5950 8900 6150 8900
-Wire Notes Line
-	6150 8900 6150 8300
-Wire Notes Line
-	6150 8300 6400 8300
 Text Notes 5050 10100 0    50   ~ 0
 disable LV
 Wire Notes Line

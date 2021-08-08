@@ -1,6 +1,11 @@
-# Air Sensor
-A small solar powered sensor for humidity, temperature and VOCs.  
+# Air Sensor V1.0
+A small solar powered ZigBee compatible sensor for temperature, humidity and VOCs.  
 Features nRF52840, AEM10941, SHT40 and SGP40.
+
+![Rendering](Hardware/rendering.png)
+
+## Voltage dividers
+Due to the extremely high resistor values and their corresponding errors, the set voltage limits are very inaccurate. 
 
 ## Software
 In progress™.
